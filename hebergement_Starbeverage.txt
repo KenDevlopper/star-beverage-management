@@ -1,0 +1,214 @@
+================================================================================
+                    GUIDE D'HÉBERGEMENT GRATUIT - STARBEVERAGE
+================================================================================
+
+📋 INFORMATIONS GÉNÉRALES
+================================================================================
+Projet: StarBeverage Management System
+Stack: React + TypeScript + PHP + MySQL + Tailwind CSS
+Hébergement: GRATUIT
+Date: 12 Septembre 2025
+Email: josephkensonn@gmail.com
+Domaine: www.starbeverage.com
+
+🌐 DOMAINES ET URLs D'HÉBERGEMENT
+================================================================================
+
+FRONTEND (React + TypeScript + Tailwind):
+----------------------------------------
+Plateforme: Vercel
+URL: https://starbeverage-management.vercel.app
+Domaine personnalisé: www.starbeverage.com
+Déploiement: Automatique via GitHub (josephkensonn@gmail.com)
+CDN: Global (performance optimale)
+
+BACKEND (PHP + API):
+--------------------
+Plateforme: ByetHost
+URL: https://www.starbeverage.com/api/
+Domaine personnalisé: www.starbeverage.com
+PHP Version: 8.1+
+Extensions: MySQL, JSON, CURL, GD, ZIP
+Support: Complet (tickets, chat, documentation)
+
+BASE DE DONNÉES (MySQL):
+------------------------
+Plateforme: ByetHost (inclus)
+Host: localhost (sur le serveur)
+Nom de la base: starbeverage_db
+Utilisateur: fourni par ByetHost
+Mot de passe: fourni par ByetHost
+
+📊 LIMITATIONS GRATUITES
+================================================================================
+
+VERCEL (Frontend):
+- Bande passante: 100GB/mois
+- Déploiements: Illimités
+- Domaine personnalisé: Oui
+- Support: Communauté
+
+BYETHOST (Backend + DB):
+- Espace disque: 1GB
+- Bande passante: 50GB/mois
+- Base de données: 5 bases MySQL
+- Support: Complet (tickets, chat, documentation)
+- PHP: 8.1+ avec toutes les extensions
+- SSL: Gratuit (Let's Encrypt)
+
+🔧 CONFIGURATION NÉCESSAIRE
+================================================================================
+
+1. MODIFICATIONS DANS LE CODE (à faire manuellement):
+----------------------------------------------------
+- Changer l'URL de l'API dans src/services/apiService.ts
+- Ancien: http://localhost/star-beverage-flow-main-v.0/public/api/
+- Nouveau: https://www.starbeverage.com/api/
+
+2. CONFIGURATION CORS:
+---------------------
+- Ajouter les domaines autorisés dans le backend PHP
+- Vercel: https://starbeverage-management.vercel.app
+- Domaine: https://www.starbeverage.com
+- Local: http://localhost:3000 (pour développement)
+
+3. BASE DE DONNÉES:
+------------------
+- Exporter la base MySQL actuelle
+- Importer sur ByetHost
+- Mettre à jour les credentials de connexion
+
+📝 ÉTAPES DE DÉPLOIEMENT
+================================================================================
+
+ÉTAPE 1: PRÉPARATION DU FRONTEND
+--------------------------------
+1. Créer un compte sur Vercel (https://vercel.com) avec josephkensonn@gmail.com
+2. Connecter votre compte GitHub (josephkensonn@gmail.com)
+3. Importer le repository StarBeverage
+4. Configurer le build:
+   - Build Command: npm run build
+   - Output Directory: dist
+   - Install Command: npm install
+5. Configurer le domaine personnalisé: www.starbeverage.com
+
+ÉTAPE 2: PRÉPARATION DU BACKEND
+-------------------------------
+1. Créer un compte sur ByetHost (https://byet.host) avec josephkensonn@gmail.com
+2. Créer un nouveau site web avec le domaine www.starbeverage.com
+3. Télécharger les fichiers PHP via File Manager
+4. Structure des dossiers:
+   /public_html/
+   ├── api/
+   │   ├── config.php
+   │   ├── users.php
+   │   ├── user_logs.php
+   │   └── ... (tous les fichiers API)
+   └── index.php (optionnel)
+
+ÉTAPE 3: MIGRATION DE LA BASE DE DONNÉES
+----------------------------------------
+1. Exporter la base MySQL actuelle:
+   - Utiliser phpMyAdmin ou mysqldump
+   - Sauvegarder: starbeverage.sql
+
+2. Importer sur ByetHost:
+   - Aller dans "MySQL Databases"
+   - Créer une nouvelle base: starbeverage_db
+   - Importer le fichier .sql
+
+3. Mettre à jour config.php:
+   - Host: localhost
+   - Database: starbeverage_db
+   - Username: [fourni par ByetHost]
+   - Password: [fourni par ByetHost]
+
+ÉTAPE 4: CONFIGURATION DES CORS
+-------------------------------
+Ajouter dans config.php:
+```php
+header('Access-Control-Allow-Origin: https://www.starbeverage.com');
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+```
+
+🔐 SÉCURITÉ ET AUTHENTIFICATION
+================================================================================
+
+1. HTTPS: Activé automatiquement sur Vercel et ByetHost
+2. CORS: Configuré pour les domaines autorisés
+3. Sessions: Gérées par PHP avec cookies sécurisés
+4. Base de données: Accès restreint par credentials
+
+📱 FONCTIONNALITÉS MOBILES (Future)
+================================================================================
+
+Pour l'APK et QR Code:
+- Frontend: Compatible PWA (Progressive Web App)
+- Backend: APIs REST déjà en place
+- Base de données: MySQL centralisée
+- Synchronisation: WebSocket possible
+
+🚀 PERFORMANCE ET OPTIMISATION
+================================================================================
+
+VERCEL:
+- CDN global
+- Cache automatique
+- Compression gzip
+- Images optimisées
+
+BYETHOST:
+- PHP 8.1+
+- MySQL optimisé
+- Cache opcache
+- Compression gzip
+
+📞 SUPPORT ET MAINTENANCE
+================================================================================
+
+VERCEL:
+- Documentation: https://vercel.com/docs
+- Support: Communauté + Discord
+- Status: https://vercel-status.com
+
+BYETHOST:
+- Documentation: https://byet.host/knowledgebase
+- Support: Tickets système + Chat en direct
+- Status: https://status.byet.host
+
+💰 COÛTS
+================================================================================
+- Hébergement: 0€/mois
+- Domaine personnalisé: ~10€/an (optionnel)
+- SSL: Gratuit (Let's Encrypt)
+- Total: GRATUIT
+
+📅 CALENDRIER DE DÉPLOIEMENT
+================================================================================
+Jour 1: Création des comptes et configuration
+Jour 2: Déploiement du backend
+Jour 3: Migration de la base de données
+Jour 4: Déploiement du frontend
+Jour 5: Tests et ajustements
+Jour 6: Mise en production
+
+⚠️ NOTES IMPORTANTES
+================================================================================
+1. Sauvegardez votre projet local avant toute modification
+2. Testez chaque étape avant de passer à la suivante
+3. Gardez une copie de la base de données locale
+4. Documentez tous les changements effectués
+5. Configurez un monitoring basique
+
+🎯 RÉSULTAT FINAL
+================================================================================
+- Site web accessible 24/7
+- Performance optimale
+- Sécurité HTTPS
+- Base de données centralisée
+- Prêt pour l'extension mobile (APK + QR Code)
+
+================================================================================
+                    FIN DU GUIDE D'HÉBERGEMENT
+================================================================================

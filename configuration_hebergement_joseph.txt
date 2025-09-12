@@ -1,0 +1,221 @@
+================================================================================
+                    CONFIGURATION D'HÉBERGEMENT - JOSEPH KENSON
+================================================================================
+
+👤 INFORMATIONS PERSONNELLES
+================================================================================
+Nom: Joseph Kenson
+Email: josephkensonn@gmail.com
+Projet: StarBeverage Management System
+Domaine: www.starbeverage.com
+Date: 12 Septembre 2025
+
+🌐 COMPTES À CRÉER
+================================================================================
+
+1. GITHUB (https://github.com)
+   Email: josephkensonn@gmail.com
+   Username: josephkensonn (ou joseph-kenson)
+   Repository: star-beverage-management
+   Description: StarBeverage Management System - React + PHP + MySQL
+
+2. VERCEL (https://vercel.com)
+   Email: josephkensonn@gmail.com
+   Connecter avec GitHub
+   Projet: star-beverage-management
+   Domaine: www.starbeverage.com
+
+3. BYETHOST (https://byet.host)
+   Email: josephkensonn@gmail.com
+   Domaine: www.starbeverage.com
+   Plan: Free Hosting
+   PHP: 8.1+
+   MySQL: Inclus
+
+📁 STRUCTURE DE FICHIERS POUR BYETHOST
+================================================================================
+
+/public_html/
+├── api/
+│   ├── config.php
+│   ├── users.php
+│   ├── user_logs.php
+│   ├── products.php
+│   ├── orders.php
+│   ├── customers.php
+│   ├── inventory.php
+│   ├── dashboard.php
+│   ├── active_sessions.php
+│   ├── force_expire_sessions.php
+│   ├── update_activity.php
+│   ├── session_middleware.php
+│   ├── haiti_timezone.php
+│   └── init.sql
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── images/
+└── index.php (optionnel)
+
+🔧 MODIFICATIONS NÉCESSAIRES
+================================================================================
+
+1. FICHIER: src/services/apiService.ts
+   Ligne à modifier:
+   const API_URL = 'http://localhost/star-beverage-flow-main-v.0/public/api';
+   
+   Remplacer par:
+   const API_URL = 'https://www.starbeverage.com/api';
+
+2. FICHIER: public/api/config.php
+   Ajouter les headers CORS:
+   ```php
+   header('Access-Control-Allow-Origin: https://www.starbeverage.com');
+   header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+   header('Access-Control-Allow-Headers: Content-Type, Authorization');
+   ```
+
+3. FICHIER: public/api/config.php
+   Mettre à jour les credentials MySQL:
+   ```php
+   $host = 'localhost';
+   $dbname = 'starbeverage_db';
+   $username = '[fourni par ByetHost]';
+   $password = '[fourni par ByetHost]';
+   ```
+
+📊 BASE DE DONNÉES
+================================================================================
+
+1. EXPORT LOCAL:
+   - Utiliser phpMyAdmin
+   - Sélectionner la base: star_beverage
+   - Exporter en SQL
+   - Sauvegarder: starbeverage_backup.sql
+
+2. IMPORT BYETHOST:
+   - Aller dans "MySQL Databases"
+   - Créer une nouvelle base: starbeverage_db
+   - Importer le fichier .sql
+   - Vérifier que toutes les tables sont créées
+
+3. TABLES À VÉRIFIER:
+   - users
+   - user_logs
+   - active_sessions
+   - products
+   - categories
+   - orders
+   - order_items
+   - customers
+   - inventory_movements
+   - system_settings
+
+🚀 ÉTAPES DE DÉPLOIEMENT
+================================================================================
+
+JOUR 1: PRÉPARATION
+-------------------
+1. Créer compte GitHub avec josephkensonn@gmail.com
+2. Créer compte Vercel avec josephkensonn@gmail.com
+3. Créer compte ByetHost avec josephkensonn@gmail.com
+4. Exporter la base de données locale
+
+JOUR 2: BACKEND
+---------------
+1. Configurer le domaine www.starbeverage.com sur ByetHost
+2. Télécharger tous les fichiers PHP via File Manager
+3. Créer la base de données MySQL
+4. Importer les données
+5. Tester les APIs
+
+JOUR 3: FRONTEND
+----------------
+1. Connecter Vercel à GitHub
+2. Importer le repository StarBeverage
+3. Configurer le build (npm run build)
+4. Configurer le domaine personnalisé
+5. Tester l'application
+
+JOUR 4: INTÉGRATION
+-------------------
+1. Modifier les URLs d'API dans le code
+2. Configurer les CORS
+3. Tester la connexion frontend-backend
+4. Vérifier toutes les fonctionnalités
+
+JOUR 5: TESTS
+-------------
+1. Tester l'authentification
+2. Tester la gestion des stocks
+3. Tester les commandes
+4. Tester l'administration
+5. Vérifier les logs d'activité
+
+JOUR 6: MISE EN PRODUCTION
+--------------------------
+1. Finaliser les tests
+2. Configurer le monitoring
+3. Documenter les accès
+4. Former les utilisateurs
+
+🔐 SÉCURITÉ
+================================================================================
+
+1. HTTPS: Activé automatiquement
+2. SSL: Let's Encrypt (gratuit)
+3. CORS: Configuré pour www.starbeverage.com
+4. Sessions: Sécurisées avec cookies
+5. Base de données: Accès restreint
+
+📱 FONCTIONNALITÉS FUTURES
+================================================================================
+
+1. APK MOBILE:
+   - Utiliser Capacitor
+   - Convertir React en APK
+   - Fonctionnalités offline
+
+2. QR CODE:
+   - Génération de QR codes
+   - Scan pour connexion rapide
+   - Synchronisation automatique
+
+3. TEMPS RÉEL:
+   - WebSocket pour les mises à jour
+   - Notifications push
+   - Synchronisation multi-appareils
+
+💰 COÛTS
+================================================================================
+- Hébergement: 0€/mois
+- Domaine: 0€/mois (sous-domaine ByetHost)
+- SSL: 0€/mois (Let's Encrypt)
+- Total: GRATUIT
+
+📞 SUPPORT
+================================================================================
+
+BYETHOST:
+- Chat en direct: Disponible 24/7
+- Tickets: Réponse sous 24h
+- Documentation: Complète
+- Forum: Communauté active
+
+VERCEL:
+- Documentation: https://vercel.com/docs
+- Support: Communauté + Discord
+- Status: https://vercel-status.com
+
+🎯 RÉSULTAT FINAL
+================================================================================
+- Site web: https://www.starbeverage.com
+- API: https://www.starbeverage.com/api/
+- Base de données: MySQL sur ByetHost
+- Performance: Optimale
+- Sécurité: HTTPS + SSL
+- Support: Complet
+
+================================================================================
+                    FIN DE LA CONFIGURATION
+================================================================================

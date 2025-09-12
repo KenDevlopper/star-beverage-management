@@ -1,0 +1,177 @@
+================================================================================
+                    CHECKLIST DE DÉPLOIEMENT - STARBEVERAGE
+================================================================================
+
+📋 PRÉPARATION (À FAIRE AVANT)
+================================================================================
+
+✅ EXPORT DE LA BASE DE DONNÉES
+- Fichier créé: starbeverage_backup_2025-09-12_16-33-34.sql
+- Taille: 88.79 KB
+- Tables: 17 tables exportées
+- Status: PRÊT POUR IMPORT
+
+✅ FICHIERS DE CONFIGURATION
+- hebergement_Starbeverage.txt (guide général)
+- configuration_hebergement_joseph.txt (guide personnalisé)
+- export_database.php (script d'export)
+- checklist_deploiement.txt (ce fichier)
+
+🌐 CRÉATION DES COMPTES
+================================================================================
+
+□ GITHUB (https://github.com)
+  Email: josephkensonn@gmail.com
+  Username: josephkensonn
+  Repository: star-beverage-management
+  Description: StarBeverage Management System
+
+□ VERCEL (https://vercel.com)
+  Email: josephkensonn@gmail.com
+  Connecter avec GitHub
+  Projet: star-beverage-management
+  Domaine: www.starbeverage.com
+
+□ BYETHOST (https://byet.host)
+  Email: josephkensonn@gmail.com
+  Domaine: www.starbeverage.com
+  Plan: Free Hosting
+  PHP: 8.1+
+  MySQL: Inclus
+
+📁 UPLOAD DES FICHIERS
+================================================================================
+
+□ BACKEND (ByetHost)
+  - Télécharger tous les fichiers du dossier /public/api/
+  - Structure: /public_html/api/
+  - Fichiers principaux:
+    * config.php
+    * users.php
+    * user_logs.php
+    * products.php
+    * orders.php
+    * customers.php
+    * inventory.php
+    * dashboard.php
+    * active_sessions.php
+    * force_expire_sessions.php
+    * update_activity.php
+    * session_middleware.php
+    * haiti_timezone.php
+
+□ FRONTEND (Vercel)
+  - Connecter le repository GitHub
+  - Configurer le build:
+    * Build Command: npm run build
+    * Output Directory: dist
+    * Install Command: npm install
+
+🗄️ BASE DE DONNÉES
+================================================================================
+
+□ CRÉATION DE LA BASE
+  - Aller dans "MySQL Databases" sur ByetHost
+  - Créer une nouvelle base: starbeverage_db
+  - Noter les credentials (host, username, password)
+
+□ IMPORT DES DONNÉES
+  - Aller dans phpMyAdmin
+  - Sélectionner la base starbeverage_db
+  - Cliquer sur "Importer"
+  - Choisir le fichier: starbeverage_backup_2025-09-12_16-33-34.sql
+  - Cliquer sur "Exécuter"
+  - Vérifier que toutes les 17 tables sont créées
+
+🔧 CONFIGURATION
+================================================================================
+
+□ MODIFICATION DES URLs
+  - Fichier: src/services/apiService.ts
+  - Changer: http://localhost/star-beverage-flow-main-v.0/public/api/
+  - Vers: https://www.starbeverage.com/api/
+
+□ CONFIGURATION CORS
+  - Fichier: public/api/config.php
+  - Ajouter les headers CORS pour www.starbeverage.com
+
+□ CREDENTIALS MYSQL
+  - Fichier: public/api/config.php
+  - Mettre à jour host, database, username, password
+
+🌐 DOMAINES
+================================================================================
+
+□ CONFIGURATION DU DOMAINE
+  - ByetHost: Configurer www.starbeverage.com
+  - Vercel: Ajouter le domaine personnalisé
+  - SSL: Activer Let's Encrypt (gratuit)
+
+□ DNS (si domaine personnalisé)
+  - Pointer www.starbeverage.com vers ByetHost
+  - Pointer www.starbeverage.com vers Vercel (pour le frontend)
+
+🧪 TESTS
+================================================================================
+
+□ TEST DU BACKEND
+  - Vérifier que les APIs répondent
+  - Tester l'authentification
+  - Vérifier la connexion à la base de données
+
+□ TEST DU FRONTEND
+  - Vérifier que l'application se charge
+  - Tester la connexion au backend
+  - Vérifier toutes les fonctionnalités
+
+□ TEST D'INTÉGRATION
+  - Login/Logout
+  - Gestion des stocks
+  - Commandes
+  - Administration
+  - Logs d'activité
+
+📱 FONCTIONNALITÉS MOBILES (FUTURE)
+================================================================================
+
+□ PRÉPARATION POUR L'APK
+  - Vérifier que l'interface est responsive
+  - Tester sur mobile
+  - Préparer les assets pour Capacitor
+
+□ PRÉPARATION POUR QR CODE
+  - APIs REST déjà en place
+  - Base de données centralisée
+  - Système d'authentification prêt
+
+💰 COÛTS
+================================================================================
+- Hébergement: 0€/mois
+- Domaine: 0€/mois (sous-domaine ByetHost)
+- SSL: 0€/mois (Let's Encrypt)
+- Total: GRATUIT
+
+📞 SUPPORT
+================================================================================
+
+BYETHOST:
+- Chat en direct: Disponible 24/7
+- Tickets: Réponse sous 24h
+- Documentation: https://byet.host/knowledgebase
+
+VERCEL:
+- Documentation: https://vercel.com/docs
+- Support: Communauté + Discord
+
+🎯 RÉSULTAT FINAL
+================================================================================
+- Site web: https://www.starbeverage.com
+- API: https://www.starbeverage.com/api/
+- Base de données: MySQL sur ByetHost
+- Performance: Optimale
+- Sécurité: HTTPS + SSL
+- Support: Complet
+
+================================================================================
+                    FIN DE LA CHECKLIST
+================================================================================

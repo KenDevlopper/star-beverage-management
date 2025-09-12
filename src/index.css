@@ -1,0 +1,185 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 210 40% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 10%;
+
+    --primary: 196 88% 44%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 40% 10%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 196 88% 94%;
+    --accent-foreground: 196 88% 24%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 196 88% 44%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 210 50% 15%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 196 88% 44%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 40% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 210 40% 20%;
+    --sidebar-ring: 196 88% 44%;
+  }
+
+  .dark {
+    --background: 210 50% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 210 50% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 210 50% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 196 88% 44%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 210 40% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 210 40% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 196 88% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply p-6 rounded-lg bg-card shadow-sm border hover:shadow-md transition-all;
+  }
+  
+  .page-container {
+    @apply container mx-auto px-4 py-6 md:py-8;
+  }
+  
+  .section-title {
+    @apply text-2xl font-semibold mb-4 text-foreground;
+  }
+  
+  .data-table {
+    @apply w-full border-collapse;
+  }
+  
+  .data-table thead tr {
+    @apply bg-muted;
+  }
+  
+  .data-table th {
+    @apply px-4 py-3 text-left text-sm font-medium text-muted-foreground;
+  }
+  
+  .data-table tbody tr {
+    @apply border-b border-border;
+  }
+  
+  .data-table td {
+    @apply px-4 py-3 text-sm;
+  }
+  
+  .status-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  
+  .status-pending {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .status-processing {
+    @apply bg-blue-100 text-blue-800;
+  }
+  
+  .status-completed {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .status-cancelled {
+    @apply bg-red-100 text-red-800;
+  }
+}
+
+@layer utilities {
+  @keyframes spin-very-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-fast {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-very-slow {
+    animation: spin-very-slow 10s linear infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+
+  .animate-spin-fast {
+    animation: spin-fast 0.5s linear infinite;
+  }
+}
