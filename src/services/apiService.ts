@@ -6,7 +6,7 @@ import { User } from '@/types/user';
 // Configuration de l'URL de base pour l'API
 // Si vous utilisez WAMP, assurez-vous que l'URL correspond à la configuration de votre serveur
 // Par exemple, si WAMP est configuré sur un port spécifique comme 8080, utilisez http://localhost:8080/api
-const API_URL = 'http://localhost/star-beverage-flow-main-v.0/public/api'; 
+const API_URL = import.meta.env.VITE_API_URL || 'https://www.starbeverage.com/api'; 
 
 // Configuration globale d'axios pour gestion des erreurs de réseau
 axios.interceptors.response.use(
